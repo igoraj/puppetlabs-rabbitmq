@@ -66,6 +66,8 @@ class rabbitmq::params {
   #install
   $admin_enable               = true
   $management_port            = '15672'
+  $management_ip              = '0.0.0.0'
+  $management_ssl             = true
   $package_apt_pin            = ''
   $package_gpg_key            = 'http://www.rabbitmq.com/rabbitmq-signing-key-public.asc'
   $repos_ensure               = true
@@ -97,6 +99,7 @@ class rabbitmq::params {
   $ssl_port                   = '5671'
   $ssl_interface              = 'UNSET'
   $ssl_management_port        = '15671'
+  $ssl_management_ip          = '0.0.0.0'
   $ssl_stomp_port             = '6164'
   $ssl_verify                 = 'verify_none'
   $ssl_fail_if_no_peer_cert   = false

@@ -61,6 +61,7 @@
     {listener, [
 <%- if @ssl -%>
       {port, <%= @ssl_management_port %>},
+      {ip, "<%= @ssl_management_ip %>"},
       {ssl, true},
       {ssl_opts, [<%- if @ssl_cacert != 'UNSET' -%>{cacertfile, "<%= @ssl_cacert %>"},<%- end -%>
 
@@ -76,7 +77,8 @@
                   <%- end -%>
                  ]}
 <%- else -%>
-      {port, <%= @management_port %>}
+      {port, <%= @management_port %>},
+      {ip, "<%= @management_ip %>"}
 <%- end -%>
     ]}
   ]}
